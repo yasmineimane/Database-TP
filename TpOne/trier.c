@@ -47,4 +47,6 @@ void trierEtudiant(FILE *file)
     remove("etudiants.txt");
     rename("file2.txt", "etudiants.txt");
     printf("Les etudiants ont ete tries par leur moyenne.\n");
+
+    file = fopen("etudiants.txt", "a+");
 }

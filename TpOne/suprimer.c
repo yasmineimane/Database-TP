@@ -44,4 +44,6 @@ void supprimerEtudiant(FILE *file, char nom[], char prenom[], int groupe, float 
         printf("Etudiant was deleted succesfuly.\n");
     else
         printf("Can't find this student.\n");
+
+    file = fopen("etudiants.txt", "a+");
 }
