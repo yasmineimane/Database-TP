@@ -25,11 +25,13 @@ void trierEtudiant(FILE *file)
     {
         nb_etudiant++;
     }
+
+
     for (int i = 0; i < nb_etudiant - 1; i++)
     {
         for (int j = 0; j < nb_etudiant - i - 1; j++)
         {
-            if (etudiant[j].moyenne > etudiant[j + 1].moyenne)
+            if (etudiant[j].moyenne < etudiant[j + 1].moyenne)
             {
                 tmp = etudiant[j];
                 etudiant[j] = etudiant[j + 1];
@@ -46,7 +48,8 @@ void trierEtudiant(FILE *file)
     fclose(file2);
     remove("etudiants.txt");
     rename("file2.txt", "etudiants.txt");
-    printf("Les etudiants ont ete tries par leur moyenne.\n");
+    // printf("Les etudiants ont ete tries par leur moyenne.\n");
 
     file = fopen("etudiants.txt", "a+");
+    afficherEtudiant(file);
 }
